@@ -1,5 +1,6 @@
 from tkinter import *
 from random import randrange
+from tkinter import messagebox
 
 
 class MainWindow(Tk):
@@ -25,24 +26,20 @@ class MainWindow(Tk):
         self.frame_game.focus()
 
         # creates a fruit and defines its position
-        self.frame_fruit = Frame(self.frame_game, width=self.snake_w, height=self.snake_h)
-        self.fruit = Label(self.frame_fruit, bg='#0f0')
+        self.frame_fruit = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#0f0')
         self.fruit_x = randrange(0, self.width, self.snake_w)
         self.fruit_y = randrange(0, self.height, self.snake_h)
 
         # create a snake
-        self.frame_snake = Frame(self.frame_game, width=self.snake_w, height=self.snake_h)
-        self.snake = Label(self.frame_snake, bg='#f00')
+        self.frame_snake = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#f00')
 
-        # pack the frames and labels
+        # pack the frames
         self.frame_game.pack_propagate(0)
         self.frame_snake.pack_propagate(0)
         self.frame_fruit.pack_propagate(0)
         self.frame_game.pack()
         self.frame_snake.place(x=0, y=0)
         self.frame_fruit.place(x=self.fruit_x, y=self.fruit_y)
-        self.snake.pack(fill=BOTH, expand=1)
-        self.fruit.pack(fill=BOTH, expand=1)
         self.after_id = None
 
         # define an starting direction
@@ -50,8 +47,30 @@ class MainWindow(Tk):
 
         # define an score
         self.score = 0
-        self.label_score = Label(self, text=('Your score is: ' + str(self.score)))
+        self.score_text = StringVar()
+        self.score_text.set('Your score is: ' + str(self.score))
+        self.label_score = Label(self, textvariable=self.score_text)
         self.label_score.pack()
+
+        # save the last moves; append the list by 2 (for now)
+        self.last_moves = []
+        self.last_moves.append(0)
+        self.last_moves.append(0)
+
+        # create the parts of the snake
+        self.list_body = []
+        self.frame_snake_part = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#fff')
+
+    def change_direction(self, event):
+        # define the key
+        self.pressed = event.keysym
+
+        # cancel the timer if it exists
+        if self.after_id is not None:
+            self.after_cancel(self.after_id)
+
+        # call the method to move the snake
+        self.move_snake()
 
     def move_snake(self):
         # save the id of the self.after so i can stop it
@@ -60,10 +79,6 @@ class MainWindow(Tk):
         # get the positions of the snake
         pos_x = self.frame_snake.winfo_x()
         pos_y = self.frame_snake.winfo_y()
-
-        # some printing statements. will get deleted later
-        print(str(pos_x) + 'x')
-        print(str(pos_y) + 'y')
 
         # edit the position according to the input
         if self.pressed == 'w':
@@ -90,32 +105,43 @@ class MainWindow(Tk):
             else:
                 self.end_game()
 
+        if '{}/{}'.format(pos_x, pos_y) in self.last_moves:
+            self.end_game()
+            return
+
         # change the position of the snake and check if the snake eats the fruit
         self.frame_snake.place(x=pos_x, y=pos_y)
         self.check_fruit(snake_pos_x=pos_x, snake_pos_y=pos_y)
 
-    def change_direction(self, event):
-        # define the key
-        self.pressed = event.keysym
+        for i in range(0, len(self.list_body), 1):
+            body = self.list_body[i]
+            last_pos = self.last_moves[i].split('/')
+            body.place(x=last_pos[0], y=last_pos[1])
 
-        # cancel the timer if it exists
-        if self.after_id is not None:
-            self.after_cancel(self.after_id)
-
-        # call the method to move the snake
-        self.move_snake()
+        # add the last move at the beginning of the list
+        if len(self.last_moves) > 0:
+            self.last_moves.remove(self.last_moves[-1])
+        self.last_moves = ['{}/{}'.format(pos_x, pos_y)] + self.last_moves
 
     def check_fruit(self, snake_pos_x, snake_pos_y):
+        eaten = False
         check = False
 
         # generates a new fruit position; also increases the score
         while (snake_pos_x == self.fruit_x) & (snake_pos_y == self.fruit_y):
+            eaten = True
+
             # score gets only increased once
             if not check:
                 check = True
                 self.score += 1
                 self.label_score = Label(self, text='Your score is: ' + str(self.score))
+                self.score_text.set('Your score is: ' + str(self.score))
                 self.label_score.update()
+
+                self.frame_snake_part = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#fff')
+                self.list_body.append(self.frame_snake_part)
+                self.last_moves.append(0)
 
             # generate the position randomly
             self.fruit_x = randrange(0, self.width, self.snake_w)
@@ -124,9 +150,24 @@ class MainWindow(Tk):
         # place the fruit with the position
         self.frame_fruit.place(x=self.fruit_x, y=self.fruit_y)
 
+        return eaten
+
     def end_game(self):
         self.after_cancel(self.after_id)
-        print('nice')
+        messagebox.showinfo('Game over', 'Your score was: ' + str(self.score))
+        self.last_moves = []
+
+        for body in self.list_body:
+            body.pack_forget()
+
+        self.list_body = []
+        self.score = 0
+        self.score_text.set('Your score is: ' + str(self.score))
+        self.label_score.update()
+
+        print('k')
+        self.frame_snake.place(x=0, y=0)
+        print('still weird')
 
 
 

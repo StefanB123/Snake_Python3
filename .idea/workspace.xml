@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="204d7131-27c1-44c9-a8b3-53349389e5b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Snake_Python3/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Snake_Python3/snake.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Snake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Snake.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake_Python3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Snake_Python3/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake_Python3/snake.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +17,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Snake_Python3/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="360">
+              <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#1725#1861#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,12 +153,21 @@
       <updated>1555083194372</updated>
       <workItem from="1555083195451" duration="4095000" />
       <workItem from="1555486987952" duration="17000" />
-      <workItem from="1556126489399" duration="3880000" />
+      <workItem from="1556126489399" duration="4204000" />
+      <workItem from="1556183303155" duration="1634000" />
     </task>
+    <task id="LOCAL-00001" summary="fixed the size issue.&#10;implemented basic movements.&#10;&#10;to do:&#10;Food&#10;Snake grow&#10;border = dead">
+      <created>1556132003162</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556132003162</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7992000" />
+    <option name="totallyTimeSpent" value="9950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -169,7 +181,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="960" height="1061" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18571429" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18791209" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -183,7 +195,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32944915" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32944915" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32944915" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -195,15 +207,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed the size issue.&#10;implemented basic movements.&#10;&#10;to do:&#10;Food&#10;Snake grow&#10;border = dead" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the size issue.&#10;implemented basic movements.&#10;&#10;to do:&#10;Food&#10;Snake grow&#10;border = dead" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Snake$main.coverage" NAME="main Coverage Results" MODIFIED="1556131794370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Snake_Python3" />
+    <SUITE FILE_PATH="coverage/Snake$main.coverage" NAME="main Coverage Results" MODIFIED="1556184938884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Snake_Python3" />
     <SUITE FILE_PATH="coverage/Snake$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1555084514932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Snake_Python3/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        <state relative-caret-position="360">
+          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#1725#1861#0" />
+          </folding>
         </state>
       </provider>
     </entry>

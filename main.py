@@ -69,18 +69,26 @@ class MainWindow(Tk):
         if self.pressed == 'w':
             if pos_y > 0:
                 pos_y -= self.snake_h
+            else:
+                self.end_game()
 
         elif self.pressed == 's':
             if pos_y < (self.height - self.snake_h):
                 pos_y += self.snake_h
+            else:
+                self.end_game()
 
         elif self.pressed == 'a':
             if pos_x > 0:
                 pos_x -= self.snake_w
+            else:
+                self.end_game()
 
         else:
             if pos_x < (self.width - self.snake_w):
                 pos_x += self.snake_w
+            else:
+                self.end_game()
 
         # change the position of the snake and check if the snake eats the fruit
         self.frame_snake.place(x=pos_x, y=pos_y)
@@ -115,6 +123,10 @@ class MainWindow(Tk):
 
         # place the fruit with the position
         self.frame_fruit.place(x=self.fruit_x, y=self.fruit_y)
+
+    def end_game(self):
+        self.after_cancel(self.after_id)
+        print('nice')
 
 
 

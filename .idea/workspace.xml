@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="204d7131-27c1-44c9-a8b3-53349389e5b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Snake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Snake.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="1725">
+              <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -158,7 +156,7 @@
       <workItem from="1556183303155" duration="1838000" />
       <workItem from="1556189550841" duration="651000" />
       <workItem from="1556192842365" duration="147000" />
-      <workItem from="1556204761508" duration="365000" />
+      <workItem from="1556204761508" duration="955000" />
     </task>
     <task id="LOCAL-00001" summary="fixed the size issue.&#10;implemented basic movements.&#10;&#10;to do:&#10;Food&#10;Snake grow&#10;border = dead">
       <created>1556132003162</created>
@@ -188,11 +186,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556192953465</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Made values easier edible.&#10;Also added the 'Snake_Python3/' directory.&#10;I don't need it, but it's my working directory and therefore i can't delete it.&#10;I will look if i can delete it.">
+      <created>1556205424844</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556205424844</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11317000" />
+    <option name="totallyTimeSpent" value="11907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -205,14 +210,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1920" height="1061" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11925133" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11925133" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32934782" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32934782" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -221,7 +225,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32944915" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32717392" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32717392" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32944915" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -238,7 +242,8 @@
     <MESSAGE value="added the fruit and a score" />
     <MESSAGE value="fixed an lag error. started doing the count" />
     <MESSAGE value="idk where other commits went.&#10;&#10;introduced:&#10;Fixed the bug. Added automatic movement. Added an score&#10;Added an fruit." />
-    <option name="LAST_COMMIT_MESSAGE" value="idk where other commits went.&#10;&#10;introduced:&#10;Fixed the bug. Added automatic movement. Added an score&#10;Added an fruit." />
+    <MESSAGE value="Made values easier edible.&#10;Also added the 'Snake_Python3/' directory.&#10;I don't need it, but it's my working directory and therefore i can't delete it.&#10;I will look if i can delete it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made values easier edible.&#10;Also added the 'Snake_Python3/' directory.&#10;I don't need it, but it's my working directory and therefore i can't delete it.&#10;I will look if i can delete it." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Snake$main.coverage" NAME="main Coverage Results" MODIFIED="1556205211279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Snake_Python3" />
@@ -247,8 +252,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="1725">
+          <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

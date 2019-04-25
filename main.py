@@ -1,6 +1,5 @@
 from tkinter import *
 from random import randrange
-# from tkinter import messagebox
 
 
 class MainWindow(Tk):
@@ -55,14 +54,18 @@ class MainWindow(Tk):
         self.label_score.pack()
 
     def move_snake(self):
+        # save the id of the self.after so i can stop it
         self.after_id = self.after(self.refresh_time, self.move_snake)
 
+        # get the positions of the snake
         pos_x = self.frame_snake.winfo_x()
         pos_y = self.frame_snake.winfo_y()
 
+        # some printing statements. will get deleted later
         print(str(pos_x) + 'x')
         print(str(pos_y) + 'y')
 
+        # edit the position according to the input
         if self.pressed == 'w':
             if pos_y > 0:
                 pos_y -= self.snake_h
@@ -79,30 +82,38 @@ class MainWindow(Tk):
             if pos_x < (self.width - self.snake_w):
                 pos_x += self.snake_w
 
+        # change the position of the snake and check if the snake eats the fruit
         self.frame_snake.place(x=pos_x, y=pos_y)
         self.check_fruit(snake_pos_x=pos_x, snake_pos_y=pos_y)
 
     def change_direction(self, event):
+        # define the key
         self.pressed = event.keysym
 
+        # cancel the timer if it exists
         if self.after_id is not None:
             self.after_cancel(self.after_id)
 
+        # call the method to move the snake
         self.move_snake()
 
     def check_fruit(self, snake_pos_x, snake_pos_y):
         check = False
 
+        # generates a new fruit position; also increases the score
         while (snake_pos_x == self.fruit_x) & (snake_pos_y == self.fruit_y):
+            # score gets only increased once
             if not check:
                 check = True
                 self.score += 1
                 self.label_score = Label(self, text='Your score is: ' + str(self.score))
                 self.label_score.update()
 
+            # generate the position randomly
             self.fruit_x = randrange(0, self.width, self.snake_w)
             self.fruit_y = randrange(0, self.height, self.snake_h)
 
+        # place the fruit with the position
         self.frame_fruit.place(x=self.fruit_x, y=self.fruit_y)
 
 

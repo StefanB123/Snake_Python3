@@ -8,8 +8,15 @@ class MainWindow(Tk):
     def __init__(self):
         super().__init__()
 
+        # set fixed game values (height, width etc.)
+        self.height = 500
+        self.width = 500
+        self.snake_h = 50
+        self.snake_w = 50
+        self.refresh_time = 500
+
         # create the game frame
-        self.frame_game = Frame(self, width=500, height=500, bg='#484848', relief='ridge')
+        self.frame_game = Frame(self, width=self.width, height=self.height, bg='#484848', relief='ridge')
 
         # bind the movements to it and focus it
         self.frame_game.bind('<w>', self.change_direction)
@@ -19,13 +26,13 @@ class MainWindow(Tk):
         self.frame_game.focus()
 
         # creates a fruit and defines its position
-        self.frame_fruit = Frame(self.frame_game, width=10, height=10)
+        self.frame_fruit = Frame(self.frame_game, width=self.snake_w, height=self.snake_h)
         self.fruit = Label(self.frame_fruit, bg='#0f0')
-        self.fruit_x = randrange(0, 500, 10)
-        self.fruit_y = randrange(0, 500, 10)
+        self.fruit_x = randrange(0, self.width, self.snake_w)
+        self.fruit_y = randrange(0, self.height, self.snake_h)
 
         # create a snake
-        self.frame_snake = Frame(self.frame_game, width=10, height=10)
+        self.frame_snake = Frame(self.frame_game, width=self.snake_w, height=self.snake_h)
         self.snake = Label(self.frame_snake, bg='#f00')
 
         # pack the frames and labels
@@ -48,7 +55,7 @@ class MainWindow(Tk):
         self.label_score.pack()
 
     def move_snake(self):
-        self.after_id = self.after(500, self.move_snake)
+        self.after_id = self.after(self.refresh_time, self.move_snake)
 
         pos_x = self.frame_snake.winfo_x()
         pos_y = self.frame_snake.winfo_y()
@@ -58,19 +65,19 @@ class MainWindow(Tk):
 
         if self.pressed == 'w':
             if pos_y > 0:
-                pos_y -= 10
+                pos_y -= self.snake_h
 
         elif self.pressed == 's':
-            if pos_y < 490:
-                pos_y += 10
+            if pos_y < (self.height - self.snake_h):
+                pos_y += self.snake_h
 
         elif self.pressed == 'a':
             if pos_x > 0:
-                pos_x -= 10
+                pos_x -= self.snake_w
 
         else:
-            if pos_x < 490:
-                pos_x += 10
+            if pos_x < (self.width - self.snake_w):
+                pos_x += self.snake_w
 
         self.frame_snake.place(x=pos_x, y=pos_y)
         self.check_fruit(snake_pos_x=pos_x, snake_pos_y=pos_y)
@@ -93,8 +100,8 @@ class MainWindow(Tk):
                 self.label_score = Label(self, text='Your score is: ' + str(self.score))
                 self.label_score.update()
 
-            self.fruit_x = randrange(0, 500, 10)
-            self.fruit_y = randrange(0, 500, 10)
+            self.fruit_x = randrange(0, self.width, self.snake_w)
+            self.fruit_y = randrange(0, self.height, self.snake_h)
 
         self.frame_fruit.place(x=self.fruit_x, y=self.fruit_y)
 

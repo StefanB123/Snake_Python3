@@ -63,10 +63,16 @@ class MainWindow(Tk):
 
     def change_direction(self, event):
         if not self.game_over:
+            # check if its an logical input
+            if ((self.pressed == event.keysym) |
+                (self.pressed == 'w') & (event.keysym == 's') |
+                (self.pressed == 's') & (event.keysym == 'w') |
+                (self.pressed == 'a') & (event.keysym == 'd') |
+                (self.pressed == 'd') & (event.keysym == 'a')):
+                return
+
             # define the key
-            if self.pressed != event.keysym:
-                self.pressed = event.keysym
-                # return
+            self.pressed = event.keysym
 
             # cancel the timer if it exists
             if self.after_id is not None:
@@ -120,6 +126,7 @@ class MainWindow(Tk):
         self.frame_snake.place(x=pos_x, y=pos_y)
         self.check_fruit(snake_pos_x=pos_x, snake_pos_y=pos_y)
 
+        # place the body parts
         for i in range(0, len(self.list_body), 1):
             body = self.list_body[i]
             last_pos = self.last_moves[i].split('/')
@@ -182,12 +189,10 @@ class MainWindow(Tk):
         self.score_text.set('Your score is: ' + str(self.score))
         self.label_score.update()
 
+        # reset the pressed button
+        self.pressed = None
+
         self.game_over = False
-
-
-
-
-
 
 
 MainWindow().mainloop()

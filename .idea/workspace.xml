@@ -16,10 +16,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+            <state relative-caret-position="270">
+              <caret line="176" selection-start-line="176" selection-end-line="176" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#2173#2479#0" />
               </folding>
             </state>
           </provider>
@@ -49,7 +50,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -61,6 +61,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -159,7 +160,9 @@
       <workItem from="1556204761508" duration="1787000" />
       <workItem from="1556221936290" duration="3311000" />
       <workItem from="1556261129927" duration="508000" />
-      <workItem from="1556277043973" duration="1189000" />
+      <workItem from="1556277043973" duration="1260000" />
+      <workItem from="1556278316478" duration="16000" />
+      <workItem from="1556278370791" duration="514000" />
     </task>
     <task id="LOCAL-00001" summary="fixed the size issue.&#10;implemented basic movements.&#10;&#10;to do:&#10;Food&#10;Snake grow&#10;border = dead">
       <created>1556132003162</created>
@@ -224,11 +227,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556261617060</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="edited the death.&#10;has some weird bugs">
+      <created>1556278291088</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556278291088</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17747000" />
+    <option name="totallyTimeSpent" value="18348000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -242,13 +252,13 @@
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="960" height="1061" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25164837" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25604397" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32934782" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4978261" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32934782" />
@@ -281,19 +291,21 @@
     <MESSAGE value="added an method to end the game (more or less).&#10;Nothing final but it's a good start." />
     <MESSAGE value="finished the main project. The snake part work fine.&#10;The death doesn't work quite as expected" />
     <MESSAGE value="removed the snake parts after death.&#10;Still have to reposition the snake (not quite sure why it doesn't work)" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed the snake parts after death.&#10;Still have to reposition the snake (not quite sure why it doesn't work)" />
+    <MESSAGE value="edited the death.&#10;has some weird bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited the death.&#10;has some weird bugs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Snake$main.coverage" NAME="main Coverage Results" MODIFIED="1556278249926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/Snake$main.coverage" NAME="main Coverage Results" MODIFIED="1556279011194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/Snake$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1555084514932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+        <state relative-caret-position="270">
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#2173#2479#0" />
           </folding>
         </state>
       </provider>

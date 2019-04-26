@@ -64,7 +64,9 @@ class MainWindow(Tk):
     def change_direction(self, event):
         if not self.game_over:
             # define the key
-            self.pressed = event.keysym
+            if self.pressed != event.keysym:
+                self.pressed = event.keysym
+                # return
 
             # cancel the timer if it exists
             if self.after_id is not None:
@@ -87,24 +89,28 @@ class MainWindow(Tk):
                 pos_y -= self.snake_h
             else:
                 self.end_game()
+                return
 
         elif self.pressed == 's':
             if pos_y < (self.height - self.snake_h):
                 pos_y += self.snake_h
             else:
                 self.end_game()
+                return
 
         elif self.pressed == 'a':
             if pos_x > 0:
                 pos_x -= self.snake_w
             else:
                 self.end_game()
+                return
 
         else:
             if pos_x < (self.width - self.snake_w):
                 pos_x += self.snake_w
             else:
                 self.end_game()
+                return
 
         if '{}/{}'.format(pos_x, pos_y) in self.last_moves:
             self.end_game()
@@ -160,18 +166,12 @@ class MainWindow(Tk):
         self.after_cancel(self.after_id)
         messagebox.showinfo('Game over', 'Your score was: ' + str(self.score))
 
-        # reset the position of the snake
-        self.frame_snake.place_forget()
-        self.frame_snake.pack_forget()
-        self.frame_snake.grid_forget()
-        # print(self.frame_snake.place(x=0, y=0))
-        self.frame_fruit.place_forget()
-
         # remove the body parts
         for body in self.list_body:
             body.place_forget()
-            print(body)
-            print(self.frame_snake)
+
+        # reset the position of the snake
+        self.frame_snake.place(x=0, y=0)
 
         # reset the list
         self.last_moves = []

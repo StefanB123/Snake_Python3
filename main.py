@@ -13,7 +13,7 @@ class MainWindow(Tk):
         self.width = 500
         self.snake_h = 50
         self.snake_w = 50
-        self.refresh_time = 500
+        self.refresh_time = 250
 
         # create the game frame
         self.frame_game = Frame(self, width=self.width, height=self.height, bg='#484848', relief='ridge')
@@ -158,7 +158,9 @@ class MainWindow(Tk):
         self.last_moves = []
 
         for body in self.list_body:
-            body.pack_forget()
+            # body.pack_forget()
+            # body.grid_forget()
+            body.place_forget()
 
         self.list_body = []
         self.score = 0

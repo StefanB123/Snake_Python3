@@ -34,9 +34,6 @@ class MainWindow(Tk):
         self.frame_snake = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#f00')
 
         # pack the frames
-        self.frame_game.pack_propagate(0)
-        self.frame_snake.pack_propagate(0)
-        self.frame_fruit.pack_propagate(0)
         self.frame_game.pack()
         self.frame_snake.place(x=0, y=0)
         self.frame_fruit.place(x=self.fruit_x, y=self.fruit_y)
@@ -59,18 +56,22 @@ class MainWindow(Tk):
 
         # create the parts of the snake
         self.list_body = []
-        self.frame_snake_part = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#fff')
+        # self.frame_snake_part = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#fff')
+
+        # set an game over bool
+        self.game_over = False
 
     def change_direction(self, event):
-        # define the key
-        self.pressed = event.keysym
+        if not self.game_over:
+            # define the key
+            self.pressed = event.keysym
 
-        # cancel the timer if it exists
-        if self.after_id is not None:
-            self.after_cancel(self.after_id)
+            # cancel the timer if it exists
+            if self.after_id is not None:
+                self.after_cancel(self.after_id)
 
-        # call the method to move the snake
-        self.move_snake()
+            # call the method to move the snake
+            self.move_snake()
 
     def move_snake(self):
         # save the id of the self.after so i can stop it
@@ -139,8 +140,8 @@ class MainWindow(Tk):
                 self.score_text.set('Your score is: ' + str(self.score))
                 self.label_score.update()
 
-                self.frame_snake_part = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#fff')
-                self.list_body.append(self.frame_snake_part)
+                frame_snake_part = Frame(self.frame_game, width=self.snake_w, height=self.snake_h, bg='#fff')
+                self.list_body.append(frame_snake_part)
                 self.last_moves.append(0)
 
             # generate the position randomly
@@ -153,23 +154,35 @@ class MainWindow(Tk):
         return eaten
 
     def end_game(self):
+        self.game_over = True
+
+        # cancel the timer and show the info
         self.after_cancel(self.after_id)
         messagebox.showinfo('Game over', 'Your score was: ' + str(self.score))
-        self.last_moves = []
 
+        # reset the position of the snake
+        self.frame_snake.place_forget()
+        self.frame_snake.pack_forget()
+        self.frame_snake.grid_forget()
+        # print(self.frame_snake.place(x=0, y=0))
+        self.frame_fruit.place_forget()
+
+        # remove the body parts
         for body in self.list_body:
-            # body.pack_forget()
-            # body.grid_forget()
             body.place_forget()
+            print(body)
+            print(self.frame_snake)
 
+        # reset the list
+        self.last_moves = []
         self.list_body = []
+
+        # reset the score
         self.score = 0
         self.score_text.set('Your score is: ' + str(self.score))
         self.label_score.update()
 
-        print('k')
-        self.frame_snake.place(x=0, y=0)
-        print('still weird')
+        self.game_over = False
 
 
 

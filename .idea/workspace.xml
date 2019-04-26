@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+            <state relative-caret-position="102">
+              <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -158,7 +158,8 @@
       <workItem from="1556192842365" duration="147000" />
       <workItem from="1556204761508" duration="1787000" />
       <workItem from="1556221936290" duration="3311000" />
-      <workItem from="1556261129927" duration="237000" />
+      <workItem from="1556261129927" duration="508000" />
+      <workItem from="1556277043973" duration="1189000" />
     </task>
     <task id="LOCAL-00001" summary="fixed the size issue.&#10;implemented basic movements.&#10;&#10;to do:&#10;Food&#10;Snake grow&#10;border = dead">
       <created>1556132003162</created>
@@ -216,11 +217,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556225233619</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="removed the snake parts after death.&#10;Still have to reposition the snake (not quite sure why it doesn't work)">
+      <created>1556261617060</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556261617060</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16431000" />
+    <option name="totallyTimeSpent" value="17747000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -234,7 +242,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="960" height="1061" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24945055" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25164837" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -272,17 +280,18 @@
     <MESSAGE value="commented the code.&#10;=&gt; no effective changes just documentation purposes" />
     <MESSAGE value="added an method to end the game (more or less).&#10;Nothing final but it's a good start." />
     <MESSAGE value="finished the main project. The snake part work fine.&#10;The death doesn't work quite as expected" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished the main project. The snake part work fine.&#10;The death doesn't work quite as expected" />
+    <MESSAGE value="removed the snake parts after death.&#10;Still have to reposition the snake (not quite sure why it doesn't work)" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed the snake parts after death.&#10;Still have to reposition the snake (not quite sure why it doesn't work)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Snake$main.coverage" NAME="main Coverage Results" MODIFIED="1556261527587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/Snake$main.coverage" NAME="main Coverage Results" MODIFIED="1556278249926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/Snake$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1555084514932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
+        <state relative-caret-position="102">
+          <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

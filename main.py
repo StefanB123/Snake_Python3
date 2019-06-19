@@ -49,10 +49,8 @@ class MainWindow(Tk):
         self.label_score = Label(self, textvariable=self.score_text)
         self.label_score.pack()
 
-        # save the last moves; append the list by 2 (for now)
+        # save the last moves
         self.last_moves = []
-        self.last_moves.append(0)
-        self.last_moves.append(0)
 
         # create the parts of the snake
         self.list_body = []
@@ -138,12 +136,10 @@ class MainWindow(Tk):
         self.last_moves = ['{}/{}'.format(pos_x, pos_y)] + self.last_moves
 
     def check_fruit(self, snake_pos_x, snake_pos_y):
-        eaten = False
         check = False
 
         # generates a new fruit position; also increases the score
         while (snake_pos_x == self.fruit_x) & (snake_pos_y == self.fruit_y):
-            eaten = True
 
             # score gets only increased once
             if not check:
@@ -163,8 +159,6 @@ class MainWindow(Tk):
 
         # place the fruit with the position
         self.frame_fruit.place(x=self.fruit_x, y=self.fruit_y)
-
-        return eaten
 
     def end_game(self):
         self.game_over = True
